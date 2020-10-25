@@ -15,5 +15,11 @@ require 'pry'
   # }
   
 def remove_strawberry(contacts)
-
+  contacts.each do |contact, data|
+    data.each do |key, value|
+      if value.kind_of?(Array)
+        contacts[contact][key].delete("strawberry")
+      end
+    end
+  end
 end
